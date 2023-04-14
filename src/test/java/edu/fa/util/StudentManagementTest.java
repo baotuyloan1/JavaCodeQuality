@@ -9,18 +9,31 @@ import edu.fa.model.Student;
 
 public class StudentManagementTest {
 
-	@Test
-	public void testBeingPassed() {
-		StudentManagement management = new StudentManagement();
-		Student student = new Student("Bao", "Da Nang", 6);
-		assertTrue(management.isPassed(student));
-	}
+  @Test
+  public void testBeingPassed() {
+    StudentManagement management = new StudentManagement();
+    Student student = new Student("Bao", "Da Nang", 6);
+    assertTrue(management.isPassed(student));
+  }
 
-	@Test
-	public void testNotPassed() {
-		StudentManagement management = new StudentManagement();
-		Student student = new Student("Bao", "Da Nang", 3);
-		assertFalse(management.isPassed(student));
+  @Test
+  public void testNotPassed() {
+    StudentManagement management = new StudentManagement();
+    Student student = new Student("Bao", "Da Nang", 3);
+    assertFalse(management.isPassed(student));
+  }
 
-	}
+  @Test
+  public void testAddressPassed() {
+    Student student = new Student();
+    student.setAddress("Hello");
+    assertTrue(student.getAddress() != null);
+  }
+
+  @Test
+  public void testAddressNoPassed() {
+    Student student = new Student();
+    student.setAddress("");
+    assertFalse(student.getAddress() != null);
+  }
 }
